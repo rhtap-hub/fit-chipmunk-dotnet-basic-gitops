@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fit-chipmunk-dotnet-basic-gitops
+  description: This is GitOps manifest for fit-chipmunk-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: fit-chipmunk-dotnet-basic
+    janus-idp.io/tekton: fit-chipmunk-dotnet-basic 
+    backstage.io/kubernetes-id: fit-chipmunk-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fit-chipmunk-dotnet-basic
